@@ -1,0 +1,28 @@
+﻿[{
+	"id":1,
+	"text":"创客管理",
+	"children":[{
+		"id":11,
+		"text":"创客列表",
+		"url":"/UserList.aspx"
+		
+
+	},{
+		"id":12,
+		"text":"订单管理",
+		"children":[{
+			"id":121,
+			"text":"全部订单列表",
+			"url":"/OrderList.aspx"
+		},{
+			"id":122,
+			"text":"一元购订单列表"
+		}]
+	},{
+		"id":13,
+		"text":"通知列表"
+	},{
+		"id":14,
+		"text":"个人信息"
+	}]
+}]

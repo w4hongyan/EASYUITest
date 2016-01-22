@@ -1,0 +1,14 @@
+F:\IIS\IIS\code\EASYUITest\DllTest\obj\Debug\DllTest.csprojResolveAssemblyReference.cache
+F:\IIS\IIS\code\EASYUITest\DllTest\bin\Debug\DllTest.exe.config
+F:\IIS\IIS\code\EASYUITest\DllTest\bin\Debug\DllTest.exe
+F:\IIS\IIS\code\EASYUITest\DllTest\bin\Debug\DllTest.pdb
+F:\IIS\IIS\code\EASYUITest\DllTest\bin\Debug\Tools.dll
+F:\IIS\IIS\code\EASYUITest\DllTest\bin\Debug\Tools.pdb
+F:\IIS\IIS\code\EASYUITest\DllTest\obj\Debug\DllTest.exe
+F:\IIS\IIS\code\EASYUITest\DllTest\obj\Debug\DllTest.pdb
+F:\IIS\IIS\code\EASYUITest\DllTest\bin\Debug\NPOI.dll
+F:\IIS\IIS\code\EASYUITest\DllTest\bin\Debug\ICSharpCode.SharpZipLib.dll
+F:\IIS\IIS\code\EASYUITest\DllTest\bin\Debug\NPOI.xml
+F:\IIS\IIS\code\EASYUITest\DllTest\bin\Debug\Enyim.Caching.dll
+F:\IIS\IIS\code\EASYUITest\DllTest\bin\Debug\log4net.dll
+F:\IIS\IIS\code\EASYUITest\DllTest\bin\Debug\App.config

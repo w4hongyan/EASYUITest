@@ -1,0 +1,15 @@
+F:\IIS\IIS\code\EASYUITest\EASYUITest\bin\EASYUITest.dll.config
+F:\IIS\IIS\code\EASYUITest\EASYUITest\bin\EASYUITest.dll
+F:\IIS\IIS\code\EASYUITest\EASYUITest\bin\EASYUITest.pdb
+F:\IIS\IIS\code\EASYUITest\EASYUITest\obj\Debug\EASYUITest.csprojResolveAssemblyReference.cache
+F:\IIS\IIS\code\EASYUITest\EASYUITest\obj\Debug\EASYUITest.dll
+F:\IIS\IIS\code\EASYUITest\EASYUITest\obj\Debug\EASYUITest.pdb
+F:\IIS\IIS\code\EASYUITest\EASYUITest\bin\Tools.dll
+F:\IIS\IIS\code\EASYUITest\EASYUITest\bin\Tools.pdb
+F:\IIS\IIS\code\EASYUITest\EASYUITest\bin\BLL.dll
+F:\IIS\IIS\code\EASYUITest\EASYUITest\bin\BLL.pdb
+F:\IIS\IIS\code\EASYUITest\EASYUITest\bin\NPOI.dll
+F:\IIS\IIS\code\EASYUITest\EASYUITest\bin\ICSharpCode.SharpZipLib.dll
+F:\IIS\IIS\code\EASYUITest\EASYUITest\bin\NPOI.xml
+F:\IIS\IIS\code\EASYUITest\EASYUITest\bin\Enyim.Caching.dll
+F:\IIS\IIS\code\EASYUITest\EASYUITest\bin\log4net.dll
