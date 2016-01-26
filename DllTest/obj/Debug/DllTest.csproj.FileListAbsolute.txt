@@ -12,3 +12,9 @@ F:\IIS\IIS\code\EASYUITest\DllTest\bin\Debug\NPOI.xml
 F:\IIS\IIS\code\EASYUITest\DllTest\bin\Debug\Enyim.Caching.dll
 F:\IIS\IIS\code\EASYUITest\DllTest\bin\Debug\log4net.dll
 F:\IIS\IIS\code\EASYUITest\DllTest\bin\Debug\App.config
+F:\IIS\IIS\code\EASYUITest\DllTest\bin\Debug\ServiceStack.Redis.dll
+F:\IIS\IIS\code\EASYUITest\DllTest\bin\Debug\ServiceStack.Interfaces.dll
+F:\IIS\IIS\code\EASYUITest\DllTest\bin\Debug\ServiceStack.Common.dll
+F:\IIS\IIS\code\EASYUITest\DllTest\bin\Debug\ServiceStack.Text.dll
+F:\IIS\IIS\code\EASYUITest\DllTest\bin\Debug\ServiceStack.Redis.xml
+F:\IIS\IIS\code\EASYUITest\DllTest\bin\Debug\ServiceStack.Text.xml

@@ -8,3 +8,9 @@ F:\IIS\IIS\code\EASYUITest\Tools\bin\Debug\NPOI.xml
 F:\IIS\IIS\code\EASYUITest\Tools\obj\Debug\Tools.csprojResolveAssemblyReference.cache
 F:\IIS\IIS\code\EASYUITest\Tools\bin\Debug\Enyim.Caching.dll
 F:\IIS\IIS\code\EASYUITest\Tools\bin\Debug\log4net.dll
+F:\IIS\IIS\code\EASYUITest\Tools\bin\Debug\ServiceStack.Common.dll
+F:\IIS\IIS\code\EASYUITest\Tools\bin\Debug\ServiceStack.Interfaces.dll
+F:\IIS\IIS\code\EASYUITest\Tools\bin\Debug\ServiceStack.Redis.dll
+F:\IIS\IIS\code\EASYUITest\Tools\bin\Debug\ServiceStack.Text.dll
+F:\IIS\IIS\code\EASYUITest\Tools\bin\Debug\ServiceStack.Redis.xml
+F:\IIS\IIS\code\EASYUITest\Tools\bin\Debug\ServiceStack.Text.xml
