@@ -10,25 +10,25 @@ using Tools;
 
 namespace BLL
 {
-    public class BaseController : IHttpHandler
+    public class BaseController : ActionHandler, IHttpHandler
     {
         public string sql = "";//默认查询语句
         public string orderStr = "";//默认排序字段
         int page = 0;
         int rows = 0;
         string action = "";//action
-
+        Dictionary<string, string> queryDic = new Dictionary<string, string>();
         public void ProcessRequest(HttpContext context)
         {
             context.Response.ContentType = "text/plain";
-          
+
             NameValueCollection collection = context.Request.QueryString;
-            Dictionary<string, string> queryDic = new Dictionary<string, string>();
+
             foreach (string key in collection.AllKeys)
             {
                 queryDic.Add(key, collection[key]);
             }
-            if (queryDic.ContainsKey("page")&& queryDic.ContainsKey("rows"))
+            if (queryDic.ContainsKey("page") && queryDic.ContainsKey("rows"))
             {
                 page = Convert.ToInt32(queryDic["page"]);//删除分页参数，留下查询参数
                 queryDic.Remove("page");
@@ -40,23 +40,31 @@ namespace BLL
                 action = queryDic["action"];
                 queryDic.Remove("action");
             }
-            switch (action)
-            { 
-                case "doexport"://导出
-
-                    string columnStr = context.Request.QueryString["columnStr"];
-                    queryDic.Remove("columnStr");
-                    List<string[]> renameList = new List<string[]>();
-                    string[] columnArray = columnStr.Split(',');
-                    foreach (string column in columnArray)
-                    {
-                        renameList.Add(column.Split('@'));
-                    }
-                    ExportToExcel(context.Response, queryDic, "导出模板", "测试",renameList);
-                    break;
-                default:
-                    context.Response.Write(GetEasyUIJson(queryDic));
-                    break;
+            ActionEventArgs arg = new ActionEventArgs(context, action);
+            Action += DefaultExport;
+            Action += DefaultSearch;
+            OnAction(arg);
+        }
+        public void DefaultSearch(object sender, ActionEventArgs e)
+        {
+            if (e.action == "")
+            {
+                e.context.Response.Write(GetEasyUIJson(queryDic));
+            }
+        }
+        public void DefaultExport(object sender, ActionEventArgs e)
+        {
+            if (e.action == "doexport")
+            {
+                string columnStr = e.context.Request.QueryString["columnStr"];
+                queryDic.Remove("columnStr");
+                List<string[]> renameList = new List<string[]>();
+                string[] columnArray = columnStr.Split(',');
+                foreach (string column in columnArray)
+                {
+                    renameList.Add(column.Split('@'));
+                }
+                ExportToExcel(e.context.Response, queryDic, "导出模板", "测试", renameList);
             }
         }
         /// <summary>
@@ -144,11 +152,11 @@ namespace BLL
 
         private string GetEasyUIJson(Dictionary<string, string> queryDic)
         {
-                return BaseBLL.GetEasyUIJson(GetSqlWhere(sql, queryDic), orderStr, page, rows);
+            return BaseBLL.GetEasyUIJson(GetSqlWhere(sql, queryDic), orderStr, page, rows);
         }
-        private bool ExportToExcel(System.Web.HttpResponse response,Dictionary<string, string> queryDic,string fileName,string sheetName,List<string[]> renameList)
+        private bool ExportToExcel(System.Web.HttpResponse response, Dictionary<string, string> queryDic, string fileName, string sheetName, List<string[]> renameList)
         {
-            return BaseBLL.ExportToExcel(response,fileName,sheetName,GetSqlWhere(sql, queryDic), orderStr, page, rows,renameList);
+            return BaseBLL.ExportToExcel(response, fileName, sheetName, GetSqlWhere(sql, queryDic), orderStr, page, rows, renameList);
         }
         public bool IsReusable
         {

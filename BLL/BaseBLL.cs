@@ -30,7 +30,7 @@ namespace BLL
             return jsonResult;
         }
         /// <summary>
-        /// 导出
+        /// 导出到响应流
         /// </summary>
         /// <param name="sql"></param>
         /// <param name="orderStr"></param>

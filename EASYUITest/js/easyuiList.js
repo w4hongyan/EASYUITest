@@ -101,6 +101,7 @@ function appdentToForm(form, name, value)
     input.attr("value", value);
     form.append(input);
 }
+
 //导入方法
 function doimport() {
     var form = $("<form>");
@@ -118,7 +119,42 @@ function doimport() {
     $("#_f").click();
     //form.submit();//表单提交 
 }
+function uploadFile() {
+    var fd = new FormData();
+    fd.append("uploadfile",$("input[name='uploadfile']")[0].files[0]);
+    var xhr = new XMLHttpRequest();
+    xhr.upload.addEventListener("progress", uploadProgress, false);
+    xhr.addEventListener("load", uploadComplete, false);
+    xhr.addEventListener("error", uploadFailed, false);
+    xhr.addEventListener("abort", uploadCanceled, false);
+    xhr.open("POST", gridHelper.controllerUrl + "?action=doimport");//修改成自己的接口
+    xhr.send(fd);
+}
+function uploadProgress(evt) {
+    if (evt.lengthComputable) {
+        var value = Math.round(evt.loaded * 100 / evt.total);
+        $('#progress').progressbar('setValue', value);
+    }
+    else {
+       // document.getElementById('progressNumber').innerHTML = 'unable to compute';
+    }
+}
+function uploadComplete(evt) {
+    /* 服务器端返回响应时候触发event事件*/
+    alert("上传成功");
+}
+function uploadFailed(evt) {
+    alert("上传失败");
+}
+function uploadCanceled(evt) {
+    alert("上传取消");
+}
 
+function opendlg(dlgid)
+{
+    $("#" + dlgid).dialog('open');
+    $('#fm').form('clear');
+}
 //扩展方法解决rownumber显示不全
 $.extend($.fn.datagrid.methods, {
     fixRownumber : function (jq) {

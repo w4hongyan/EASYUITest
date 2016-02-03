@@ -30,6 +30,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Common.Logging">
+      <HintPath>..\lib\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging.Core">
+      <HintPath>..\lib\Common.Logging.Core.dll</HintPath>
+    </Reference>
     <Reference Include="Enyim.Caching">
       <HintPath>..\lib\Enyim.Caching.dll</HintPath>
     </Reference>
@@ -38,6 +44,15 @@
     </Reference>
     <Reference Include="NPOI">
       <HintPath>E:\迅雷下载\Compressed\NPOI 2.2.0.0\dotnet4\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="Quartz">
+      <HintPath>..\lib\Quartz.dll</HintPath>
+    </Reference>
+    <Reference Include="Senparc.Weixin">
+      <HintPath>..\lib\Senparc.Weixin.dll</HintPath>
+    </Reference>
+    <Reference Include="Senparc.Weixin.MP">
+      <HintPath>..\lib\Senparc.Weixin.MP.dll</HintPath>
     </Reference>
     <Reference Include="ServiceStack.Common">
       <HintPath>..\lib\ServiceStack.Redis.3.9.29.0\ServiceStack.Common.dll</HintPath>
@@ -73,6 +88,7 @@
     <Compile Include="RedisHelper.cs" />
     <Compile Include="SqlHelper.cs" />
     <Compile Include="StringHelper.cs" />
+    <Compile Include="WeiXinHelper.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

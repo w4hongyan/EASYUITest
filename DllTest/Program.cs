@@ -1,8 +1,11 @@
-﻿using System;
+﻿using Quartz;
+using Quartz.Impl;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -15,6 +18,17 @@ namespace DllTest
     {
         static void Main(string[] args)
         {
+            IScheduler scheduler = StdSchedulerFactory.GetDefaultScheduler();
+            scheduler.Start();
+            IJobDetail job = JobBuilder.Create<TestJob>()
+                .WithIdentity("job1", "group1")
+                .UsingJobData("jobSays","Hello World!")
+                .UsingJobData("myFloatValue",3.141f)
+                .Build();
+            ITrigger trigger = TriggerBuilder.Create().WithIdentity("trigger1", "group1").StartNow().WithSimpleSchedule(x => x.WithIntervalInSeconds(10).RepeatForever()).Build();
+            scheduler.ScheduleJob(job, trigger);
+            Thread.Sleep(TimeSpan.FromSeconds(60));
+            scheduler.Shutdown();
             //List<string[]> list=new List<string[]>();
             //list.Add(new string[]{"name","姓名"});
             //DataTable dt = GetTable();
@@ -28,11 +42,12 @@ namespace DllTest
             //  Console.WriteLine(item);  
             //}
             //Console.WriteLine(RedisHelper.GetAllItems("QueueListId"));
-            TestRedisObject();
+            //TestRedisObject();
             Console.WriteLine("ok");
 
             Console.ReadKey();
         }
+
         public static void TestRedisObject()
         {
 
