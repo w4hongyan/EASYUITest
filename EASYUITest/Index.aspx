@@ -33,12 +33,14 @@
             if ($('#etab').tabs('exists', tit)) {
                 $('#etab').tabs('select', tit);
             } else {
-                $('#etab').tabs('add', {
-                    title: tit,
-                    content: '<iframe scrolling="auto" frameborder="0"  src="' + link + '" style="width:99%;height:98.5%;border-style:solid;  border-width:3px; border-color:#F2F2F2;"></iframe>',
-                    fit: true,
-                    closable: true
-                });
+                if (link != "#") {
+                    $('#etab').tabs('add', {
+                        title: tit,
+                        content: '<iframe scrolling="auto" frameborder="0"  src="' + link + '" style="width:99%;height:98.5%;border-style:solid;  border-width:3px; border-color:#F2F2F2;"></iframe>',
+                        fit: true,
+                        closable: true
+                    });
+                }
             }
         }
     </script>

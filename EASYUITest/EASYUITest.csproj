@@ -119,6 +119,8 @@
     <Content Include="font-awesome\scss\_stacked.scss" />
     <Content Include="font-awesome\scss\_variables.scss" />
     <Content Include="ashx\Sys\ModuleController.ashx" />
+    <Content Include="ashx\Sys\PriviledgeController.ashx" />
+    <Content Include="ashx\Sys\RoleController.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -799,6 +801,9 @@
     <Content Include="jquery-easyui\themes\metro\window.css" />
     <Content Include="jquery-easyui\themes\mobile.css" />
     <Content Include="OrderList.aspx" />
+    <Content Include="Sys\RoleSetPriviledge.aspx" />
+    <Content Include="Sys\RoleList.aspx" />
+    <Content Include="Sys\PriviledgeList.aspx" />
     <Content Include="Sys\ModuleList.aspx" />
     <Content Include="UserList.aspx" />
     <Content Include="Web.config">
@@ -808,6 +813,12 @@
   <ItemGroup>
     <Compile Include="ashx\OrderController.ashx.cs">
       <DependentUpon>OrderController.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="ashx\Sys\RoleController.ashx.cs">
+      <DependentUpon>RoleController.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="ashx\Sys\PriviledgeController.ashx.cs">
+      <DependentUpon>PriviledgeController.ashx</DependentUpon>
     </Compile>
     <Compile Include="ashx\Sys\ModuleController.ashx.cs">
       <DependentUpon>ModuleController.ashx</DependentUpon>
@@ -832,6 +843,27 @@
     </Compile>
     <Compile Include="OrderList.aspx.designer.cs">
       <DependentUpon>OrderList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sys\RoleSetPriviledge.aspx.cs">
+      <DependentUpon>RoleSetPriviledge.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sys\RoleSetPriviledge.aspx.designer.cs">
+      <DependentUpon>RoleSetPriviledge.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sys\RoleList.aspx.cs">
+      <DependentUpon>RoleList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sys\RoleList.aspx.designer.cs">
+      <DependentUpon>RoleList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sys\PriviledgeList.aspx.cs">
+      <DependentUpon>PriviledgeList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sys\PriviledgeList.aspx.designer.cs">
+      <DependentUpon>PriviledgeList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Sys\ModuleList.aspx.cs">
       <DependentUpon>ModuleList.aspx</DependentUpon>

@@ -16,6 +16,7 @@ namespace DllTest
 {
     class Program
     {
+
         static void Main(string[] args)
         {
 
@@ -46,9 +47,11 @@ namespace DllTest
             //Console.WriteLine(RedisHelper.GetAllItems("QueueListId"));
             //TestRedisObject();
             //TestRedisSet();
-            StackExchangeRedisHelper.StringSet("key1856", "wahaha");
-            string s= StackExchangeRedisHelper.StringGet("key1856");
-            Console.WriteLine(s);
+            //StackExchangeRedisHelper.StringSet("key1856", "wahaha");
+            //string s= StackExchangeRedisHelper.StringGet("key1856");
+            bool bl=default(bool);
+            Console.WriteLine(bl);
+           // Console.WriteLine(s);
 
             Console.ReadKey();
         }
