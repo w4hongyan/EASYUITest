@@ -1,4 +1,8 @@
 ﻿var com = {};
-com.doSearch = function () {
-    alert("ok");
+com.formatBool = function (value) {
+    if (value) {
+        return "是";
+    } else {
+        return "否";
+    }
 }

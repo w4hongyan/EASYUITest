@@ -1,0 +1,5 @@
+F:\IIS\IIS\code\EASYUITest\Model\bin\Debug\Model.dll
+F:\IIS\IIS\code\EASYUITest\Model\bin\Debug\Model.pdb
+F:\IIS\IIS\code\EASYUITest\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+F:\IIS\IIS\code\EASYUITest\Model\obj\Debug\Model.dll
+F:\IIS\IIS\code\EASYUITest\Model\obj\Debug\Model.pdb

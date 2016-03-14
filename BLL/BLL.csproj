@@ -43,9 +43,14 @@
     <Compile Include="ActionHandler.cs" />
     <Compile Include="BaseBLL.cs" />
     <Compile Include="BaseController.cs" />
+    <Compile Include="ModuleBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{c71d3d88-f343-4633-973e-0768fcb5e009}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Tools\Tools.csproj">
       <Project>{c226eb35-39e0-40ab-bedc-11974082f087}</Project>
       <Name>Tools</Name>

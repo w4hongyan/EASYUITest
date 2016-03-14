@@ -15,11 +15,12 @@ F:\IIS\IIS\code\EASYUITest\DllTest\bin\Debug\Senparc.Weixin.MP.dll
 F:\IIS\IIS\code\EASYUITest\DllTest\bin\Debug\Senparc.Weixin.dll
 F:\IIS\IIS\code\EASYUITest\DllTest\bin\Debug\ServiceStack.Common.dll
 F:\IIS\IIS\code\EASYUITest\DllTest\bin\Debug\ServiceStack.Text.dll
-F:\IIS\IIS\code\EASYUITest\DllTest\bin\Debug\ICSharpCode.SharpZipLib.dll
 F:\IIS\IIS\code\EASYUITest\DllTest\bin\Debug\Tools.pdb
 F:\IIS\IIS\code\EASYUITest\DllTest\bin\Debug\ServiceStack.Redis.xml
-F:\IIS\IIS\code\EASYUITest\DllTest\bin\Debug\NPOI.xml
 F:\IIS\IIS\code\EASYUITest\DllTest\bin\Debug\ServiceStack.Text.xml
 F:\IIS\IIS\code\EASYUITest\DllTest\obj\Debug\DllTest.csprojResolveAssemblyReference.cache
 F:\IIS\IIS\code\EASYUITest\DllTest\obj\Debug\DllTest.exe
 F:\IIS\IIS\code\EASYUITest\DllTest\obj\Debug\DllTest.pdb
+F:\IIS\IIS\code\EASYUITest\DllTest\bin\Debug\StackExchange.Redis.dll
+F:\IIS\IIS\code\EASYUITest\DllTest\bin\Debug\StackExchange.Redis.pdb
+F:\IIS\IIS\code\EASYUITest\DllTest\bin\Debug\StackExchange.Redis.xml

@@ -97,7 +97,7 @@ namespace Tools
        }
        public static int ExecuteNonQuery(string connectionString, CommandType commandType, string commandText)
        {
-           return ExecuteNonQuery(connectionString, commandType, commandText);
+           return ExecuteNonQuery(connectionString, commandType, commandText,null);
        }
        public static int ExecuteNonQuery(string connectionString, CommandType commandType, string commandText, params SqlParameter[] commandParameters)
        {
@@ -394,6 +394,53 @@ namespace Tools
            object obj = SqlHelper.ExecuteScalar(conn, CommandType.Text, queryStr.ToString(), cmdParams);
            return Convert.ToInt32(obj);
        }
-       
+       public static T GetEntity<T>(string sql, params SqlParameter[] cmdParams) where T : new()
+       {
+           DataTable dt = SqlHelper.ExecuteDataTable(SqlHelper.ConnectingString, CommandType.Text, sql,cmdParams);
+           return ConvertHelper.GetEntity<T>(dt);
+       }
+       /// <summary>
+       /// 查询并返回IList
+       /// </summary>
+       /// <typeparam name="T"></typeparam>
+       /// <param name="sql"></param>
+       /// <param name="cmdParams"></param>
+       /// <returns></returns>
+       public static List<T> GetList<T>(string sql, params SqlParameter[] cmdParams) where T : new()
+       {
+           List<T> list = new List<T>();
+           try
+           {
+
+               DataTable dt = ExecuteDataTable(SqlHelper.ConnectingString, CommandType.Text, sql, cmdParams);
+               list =ConvertHelper.GetEntities<T>(dt).ToList();
+               return list;
+
+           }
+           catch (Exception e)
+           {
+               return null;
+
+           }
+       }
+
+       public static string GetJson(string sql, params SqlParameter[] cmdParams)
+       {
+           string json = "";
+           try
+           {
+
+               DataTable dt = ExecuteDataTable(SqlHelper.ConnectingString, CommandType.Text, sql, cmdParams);
+               json = JSONHelper.DataTableToJson(dt);
+               return json;
+
+           }
+           catch (Exception e)
+           {
+               return null;
+
+           }
+       }
+
     }
 }

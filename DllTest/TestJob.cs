@@ -10,17 +10,18 @@ namespace DllTest
 {
     public class TestJob : IJob
     {
-        private readonly ILog _logger = LogManager.GetLogger(typeof(TestJob));
+       // private readonly ILog _logger = LogManager.GetLogger(typeof(TestJob));
 
 
         public void Execute(IJobExecutionContext context)
         {
-            JobKey key = context.JobDetail.Key;
-            JobDataMap dataMap = context.JobDetail.JobDataMap;
-            string jobSays = dataMap.GetString("jobSays");
-            float myFloatValue = dataMap.GetFloat("myFloatValue");
-           // _logger.InfoFormat("TestJob测试");
-            Console.WriteLine("Instance: "+key+" JobSays:"+jobSays+" Value:"+myFloatValue);
+           // JobKey key = context.JobDetail.Key;
+           // JobDataMap dataMap = context.JobDetail.JobDataMap;
+           // string jobSays = dataMap.GetString("jobSays");
+           // float myFloatValue = dataMap.GetFloat("myFloatValue");
+           //// _logger.InfoFormat("TestJob测试");
+           // Console.WriteLine("Instance: "+key+" JobSays:"+jobSays+" Value:"+myFloatValue);
+            Console.WriteLine("Greetings from TestJob");
         }
     }
 }

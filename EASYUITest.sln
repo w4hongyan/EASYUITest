@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DllTest", "DllTest\DllTest.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{3399AF27-2AF3-42C9-9879-4FDCBBC293F8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{C71D3D88-F343-4633-973E-0768FCB5E009}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{3399AF27-2AF3-42C9-9879-4FDCBBC293F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3399AF27-2AF3-42C9-9879-4FDCBBC293F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3399AF27-2AF3-42C9-9879-4FDCBBC293F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C71D3D88-F343-4633-973E-0768FCB5E009}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C71D3D88-F343-4633-973E-0768FCB5E009}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C71D3D88-F343-4633-973E-0768FCB5E009}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C71D3D88-F343-4633-973E-0768FCB5E009}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

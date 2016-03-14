@@ -2,6 +2,8 @@
 var gridHelper = {
     gridId: "tt",
     controllerUrl: "",
+    sortName: "Id",
+    sortOrder: "asc",
     isInit: false,
     initGrid: function () {
         if (!gridHelper.isInit) {
@@ -12,6 +14,8 @@ var gridHelper = {
                 pageSize: 30,
                 pageList: [10, 20,30, 40, 50, 100, 200,500], //可以设置每页记录条数的列表
                 url: gridHelper.controllerUrl,
+                sortName: gridHelper.sortName,
+                sortOrder: gridHelper.sortOrder,
                 method: 'get',
                 toolbar: '#tb',
                 onLoadSuccess: function () {
@@ -22,10 +26,61 @@ var gridHelper = {
         }
     }
 }
+function initDlg(dlgId,title){
+    $('#'+dlgId).dialog({
+        title: title,
+        width: 600,
+        height: 400,
+        closed: true,
+        modal: true,
+        iconCls: 'icon-save',
+        buttons: [{
+            text: 'Ok',
+            iconCls: 'icon-ok',
+            handler: function () {
+                alert('ok');
+            }
+        }, {
+            text: 'Cancel',
+            handler: function () {
+                alert('cancel');;
+            }
+        }]
+    });
+}
+
+function add(callback) {
+    $('#ff').form('submit', {
+        url: gridHelper.controllerUrl+"?action=add",
+        onSubmit: function () {
+            if ($(this).form('enableValidation').form('validate')) {
+                $('#dlg').dialog('close');
+            } else {
+                return false;
+            }
+        },
+        success: function (data) {
+            $("#" + gridHelper.gridId).datagrid("load");
+            var jsonData = $.parseJSON(data);
+            $.messager.show({
+                title: '消息提示',
+                msg: jsonData.msg,
+                timeout: 5000,
+                showType: 'slide'
+            });
+            if (callback != undefined) {
+                callback();
+            }
+        }
+    });
+}
+function clearForm() {
+    $('#ff').form('clear');
+}
 //获取查询Json字符串
 function GetQueryJson(actionId) {
     var scstr = "{";
-    if (actionId != "")
+    if (actionId != ""&&actionId!=undefined)
     {
         scstr += "\"action\":\""+actionId+"\",";
     }

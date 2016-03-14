@@ -84,9 +84,8 @@
     <Content Include="jquery-easyui\themes\skin-blue.css" />
     <Content Include="js\common.js" />
     <Content Include="js\easyuiList.js" />
-    <Content Include="lefttree.json" />
-    <Content Include="ashx\UserListController.ashx" />
-    <Content Include="ashx\OrderListController.ashx" />
+    <Content Include="ashx\UserController.ashx" />
+    <Content Include="ashx\OrderController.ashx" />
     <Content Include="font-awesome\css\font-awesome.css.map" />
     <Content Include="font-awesome\fonts\fontawesome-webfont.eot" />
     <Content Include="font-awesome\fonts\fontawesome-webfont.ttf" />
@@ -119,6 +118,7 @@
     <Content Include="font-awesome\scss\_rotated-flipped.scss" />
     <Content Include="font-awesome\scss\_stacked.scss" />
     <Content Include="font-awesome\scss\_variables.scss" />
+    <Content Include="ashx\Sys\ModuleController.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -799,17 +799,21 @@
     <Content Include="jquery-easyui\themes\metro\window.css" />
     <Content Include="jquery-easyui\themes\mobile.css" />
     <Content Include="OrderList.aspx" />
+    <Content Include="Sys\ModuleList.aspx" />
     <Content Include="UserList.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ashx\OrderListController.ashx.cs">
-      <DependentUpon>OrderListController.ashx</DependentUpon>
+    <Compile Include="ashx\OrderController.ashx.cs">
+      <DependentUpon>OrderController.ashx</DependentUpon>
     </Compile>
-    <Compile Include="ashx\UserListController.ashx.cs">
-      <DependentUpon>UserListController.ashx</DependentUpon>
+    <Compile Include="ashx\Sys\ModuleController.ashx.cs">
+      <DependentUpon>ModuleController.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="ashx\UserController.ashx.cs">
+      <DependentUpon>UserController.ashx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -828,6 +832,13 @@
     </Compile>
     <Compile Include="OrderList.aspx.designer.cs">
       <DependentUpon>OrderList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sys\ModuleList.aspx.cs">
+      <DependentUpon>ModuleList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sys\ModuleList.aspx.designer.cs">
+      <DependentUpon>ModuleList.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserList.aspx.cs">
       <DependentUpon>UserList.aspx</DependentUpon>
@@ -860,9 +871,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>13807</DevelopmentServerPort>
+          <DevelopmentServerPort>13377</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://10.10.3.22:3000</IISUrl>
+          <IISUrl>http://localhost:13377</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

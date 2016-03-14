@@ -13,7 +13,7 @@
 <body class="easyui-layout">
 	<div data-options="region:'north',border:false" style="height:60px;background:#3C8DBC;padding:10px;color:#ffffff;">后台管理系统</div>
 	<div data-options="region:'west',split:true,title:'West'" style="width:200px;padding:10px;">
-		<ul id="menuTree" class="easyui-tree" data-options="url:'lefttree.json',method:'get',animate:true"></ul>
+		<ul id="menuTree" class="easyui-tree" data-options="url:'/ashx/Sys/ModuleController.ashx?action=getModule',method:'get',animate:true"></ul>
 	</div>
 	<div data-options="region:'south',border:false" style="height:50px;background:#A9FACD;padding:10px;">版权所有</div>
 	<div data-options="region:'center',title:'Center'">

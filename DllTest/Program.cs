@@ -18,23 +18,25 @@ namespace DllTest
     {
         static void Main(string[] args)
         {
-            IScheduler scheduler = StdSchedulerFactory.GetDefaultScheduler();
-            scheduler.Start();
-            IJobDetail job = JobBuilder.Create<TestJob>()
-                .WithIdentity("job1", "group1")
-                .UsingJobData("jobSays","Hello World!")
-                .UsingJobData("myFloatValue",3.141f)
-                .Build();
-            ITrigger trigger = TriggerBuilder.Create().WithIdentity("trigger1", "group1").StartNow().WithSimpleSchedule(x => x.WithIntervalInSeconds(10).RepeatForever()).Build();
-            scheduler.ScheduleJob(job, trigger);
-            Thread.Sleep(TimeSpan.FromSeconds(60));
-            scheduler.Shutdown();
+
+            //TestQuartZ();
+            //IScheduler scheduler = StdSchedulerFactory.GetDefaultScheduler();
+            //scheduler.Start();
+            //IJobDetail job = JobBuilder.Create<TestJob>()
+            //    .WithIdentity("job1", "group1")
+            //    .UsingJobData("jobSays","Hello World!")
+            //    .UsingJobData("myFloatValue",3.141f)
+            //    .Build();
+            //ITrigger trigger = TriggerBuilder.Create().WithIdentity("trigger1", "group1").StartNow().WithSimpleSchedule(x => x.WithIntervalInSeconds(10).RepeatForever()).Build();
+            //scheduler.ScheduleJob(job, trigger);
+            //Thread.Sleep(TimeSpan.FromSeconds(60));
+            //scheduler.Shutdown();
             //List<string[]> list=new List<string[]>();
             //list.Add(new string[]{"name","姓名"});
             //DataTable dt = GetTable();
             //NPOIHelper.CreateXls(@"D:\text.xls", "你好", dt,list);
             //TestGetMemCache();
-            //DataTable table= NPOIHelper.ToDataTable(@"D:\import.xls", "0", 0);
+            //DataTable table= NPOIHelper.ToDataTable(@"F:\发货信息.xls", "0", 0);
             //LogHelper.WriteLog(typeof(Program), "测试日志");
             //List<string> list=RedisHelper.GetAllItems("QueueListId");
             //foreach (var item in list)
@@ -43,7 +45,10 @@ namespace DllTest
             //}
             //Console.WriteLine(RedisHelper.GetAllItems("QueueListId"));
             //TestRedisObject();
-            Console.WriteLine("ok");
+            //TestRedisSet();
+            StackExchangeRedisHelper.StringSet("key1856", "wahaha");
+            string s= StackExchangeRedisHelper.StringGet("key1856");
+            Console.WriteLine(s);
 
             Console.ReadKey();
         }
@@ -111,7 +116,7 @@ namespace DllTest
         {
             for (int i = 0; i < 10000; i++)
             {
-                RedisHelper.Set<string>("key" + i, i.ToString());
+                RedisHelper.Set<string>("key" + i, "redis"+i.ToString());
             }
         }
 
@@ -144,6 +149,27 @@ namespace DllTest
             catch (Exception ex)
             {
                 return null;
+            }
+        }
+        /// <summary>
+        /// QuartZDemo
+        /// </summary>
+        public static void TestQuartZ()
+        {
+            try
+            {
+                IScheduler scheduler = StdSchedulerFactory.GetDefaultScheduler();
+                scheduler.Start();
+                IJobDetail job = JobBuilder.Create<TestJob>().WithIdentity("job1", "group1").Build();
+                ITrigger trigger = TriggerBuilder.Create().WithIdentity("trigger1", "group1").StartNow()
+                    .WithSimpleSchedule(x => x.WithIntervalInSeconds(2).RepeatForever()).Build();
+                scheduler.ScheduleJob(job, trigger);
+                Thread.Sleep(TimeSpan.FromSeconds(10));
+                scheduler.Shutdown();
+            }
+            catch (SchedulerException se)
+            {
+                Console.WriteLine(se);
             }
         }
 

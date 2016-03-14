@@ -13,9 +13,9 @@ namespace EASYUITest.ashx
     /// <summary>
     /// UserListController 的摘要说明
     /// </summary>
-    public class OrderListController : BLL.BaseController
+    public class OrderController : BLL.BaseController
     {
-        public OrderListController()
+        public OrderController()
         {
             sql = @"SELECT [Id]
                           ,[Weid]
@@ -40,7 +40,6 @@ namespace EASYUITest.ashx
                           ,[YYGId]
                           ,[FromType]
                       FROM [DistributeShopZCKJ].[dbo].[MOrder] WHERE IsPay=1";
-            orderStr = "CreateTime desc";
             Action += ImportSendExcel;
         }
         private void ImportSendExcel(object sender, ActionEventArgs e)
