@@ -21,7 +21,9 @@
             gridHelper.controllerUrl = "/ashx/Sys/RoleController.ashx";
             gridHelper.singleSelect = true;
             gridHelper.title = "角色列表";
+            gridHelper.onClickRow = onRoleClick;
             gridHelper.initGrid();
+
 
             gridHelper.controllerUrl = "/ashx/Sys/PriviledgeController.ashx";
             gridHelper.gridId = "tt1";
@@ -31,6 +33,13 @@
             gridHelper.isInit = false;
             gridHelper.initGrid();
         });
+
+        function onRoleClick() {
+            alert("haha");
+            com.get("/ashx/Sys/PriviledgeController.ashx?action=getHasPriviledge", function(msg) {
+                alert(msg);
+            });
+        }
 
     </script>
 </head>

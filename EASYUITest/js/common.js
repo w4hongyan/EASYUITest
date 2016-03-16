@@ -6,3 +6,6 @@ com.formatBool = function (value) {
         return "否";
     }
 }
+com.get= function(url,callback) {
+    $.get(url, callback);
+}

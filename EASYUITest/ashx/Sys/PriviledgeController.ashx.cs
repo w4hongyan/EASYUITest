@@ -21,7 +21,17 @@ namespace EASYUITest.ashx.Sys
        {
             OperTable = "TPriviledge";
             sql = "SELECT tp.*,tm.Name AS ModuleName  FROM TPriviledge tp LEFT JOIN dbo.TModule tm ON tp.ModuleId=tm.Id";
+            Action += GetHasPriviledge;
+
        }
+
+        void GetHasPriviledge(object sender,BLL.ActionEventArgs e)
+        {
+            if (e.action == "getHasPriviledge")
+            {
+                e.context.Response.Write("123");
+            }
+        }
 
     }
 }
