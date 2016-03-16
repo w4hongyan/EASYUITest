@@ -1,0 +1,1 @@
+F:\IIS\IIS\code\EASYUITest\BLL\obj\Release\BLL.csprojResolveAssemblyReference.cache

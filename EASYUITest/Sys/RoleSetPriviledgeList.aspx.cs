@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace EASYUITest.Sys
 {
-    public partial class PreviledgeList : System.Web.UI.Page
+    public partial class RoleSetPriviledgeList : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

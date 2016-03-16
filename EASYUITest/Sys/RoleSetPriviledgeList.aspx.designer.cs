@@ -10,6 +10,6 @@
 namespace EASYUITest.Sys {
     
     
-    public partial class PreviledgeList {
+    public partial class RoleSetPriviledgeList {
     }
 }

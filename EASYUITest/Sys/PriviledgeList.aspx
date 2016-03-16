@@ -36,7 +36,8 @@
         <thead>
             <tr>
                 <th data-options="field:'ck',checkbox:true"></th>
-                <th data-options="field:'ModuleId',width:100,sortable:true">模块名称</th>
+                <th data-options="field:'ModuleId',width:100,sortable:true">模块Id</th>
+                <th data-options="field:'ModuleName',width:100,sortable:true">模块名称</th>
                 <th data-options="field:'Code',width:100,sortable:true">权限代码</th>
                 <th data-options="field:'Name',width:100,sortable:true">权限名称</th>
                 <th data-options="field:'isDelete',width:100,sortable:true" formatter="com.formatBool">是否删除</th>

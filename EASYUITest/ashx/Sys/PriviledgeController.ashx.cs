@@ -19,7 +19,8 @@ namespace EASYUITest.ashx.Sys
     {
         public PriviledgeController()
        {
-           OperTable = "TPriviledge";
+            OperTable = "TPriviledge";
+            sql = "SELECT tp.*,tm.Name AS ModuleName  FROM TPriviledge tp LEFT JOIN dbo.TModule tm ON tp.ModuleId=tm.Id";
        }
 
     }

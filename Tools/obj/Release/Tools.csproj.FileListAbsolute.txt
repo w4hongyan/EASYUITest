@@ -1,0 +1,1 @@
+F:\IIS\IIS\code\EASYUITest\Tools\obj\Release\Tools.csprojResolveAssemblyReference.cache

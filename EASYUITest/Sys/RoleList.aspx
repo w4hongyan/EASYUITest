@@ -19,6 +19,7 @@
         $(function () {
             gridHelper.controllerUrl = "/ashx/Sys/RoleController.ashx";
             gridHelper.initGrid();
+          
         })
     </script>
 </head>
@@ -57,14 +58,11 @@
 		<a href="#" class="easyui-linkbutton" iconCls="icon-ok" onclick="add()">添加</a>
 		<a href="#" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#dlg').dialog('close')">取消</a>
 	</div>
+   
     <script>
         function setPriviledge() {
-            var row = $('#tt').datagrid('getSelected');
-            if (row){
-                location.href = "/Sys/RoleSetPriviledge.aspx?roleId="+row.Id;
-            } else {
-                $.messager.alert("提示", "请选择要设置的角色！");
-            }
+
+            location.href = "/Sys/RoleSetPriviledgeList.aspx";
         }
     </script>
 </body>

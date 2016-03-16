@@ -1,23 +1,32 @@
 ﻿var datagrid;
 var gridHelper = {
+    title: "",
     gridId: "tt",
     controllerUrl: "",
     sortName: "Id",
     sortOrder: "asc",
+    singleSelect: true,
     isInit: false,
+    queryParams: {},
+    pageSize: 30,
+    onClickRow: function () { },
     initGrid: function () {
         if (!gridHelper.isInit) {
             datagrid = $("#" + gridHelper.gridId).datagrid({
+                title:gridHelper.title,
+                height: $(window).height() - 35,
                 rownumbers: true,
-                singleSelect: false,
+                singleSelect: gridHelper.singleSelect,
+                queryParams:gridHelper.queryParams,
                 pagination: true,
-                pageSize: 30,
+                pageSize: gridHelper.pageSize,
                 pageList: [10, 20,30, 40, 50, 100, 200,500], //可以设置每页记录条数的列表
                 url: gridHelper.controllerUrl,
                 sortName: gridHelper.sortName,
                 sortOrder: gridHelper.sortOrder,
                 method: 'get',
                 toolbar: '#tb',
+                onClickRow: gridHelper.onClickRow,
                 onLoadSuccess: function () {
                     $(this).datagrid("fixRownumber");
                 }
@@ -25,7 +34,16 @@ var gridHelper = {
             gridHelper.isInit = true;
         }
     }
-}
+};
+function getSelections(gridId) {
+    var ids = [];
+    var rows = $('#' + gridId).datagrid('getSelections');
+    for (var i = 0; i < rows.length; i++) {
+        ids.push(rows[i].Id);
+    }
+    var idstmp = ids.join(',');
+    return idstmp;
+};
 function initDlg(dlgId,title){
     $('#'+dlgId).dialog({
         title: title,
@@ -130,8 +148,8 @@ function doexport()
        
     });
     var columnStr = relArray.toString();//excel表头重命名数组
-    var page = $("#" + gridHelper.gridId).datagrid('options').pageNumber//获取分页
-    var rows = $("#" + gridHelper.gridId).datagrid('options').pageSize
+    var page = $("#" + gridHelper.gridId).datagrid('options').pageNumber; //获取分页
+    var rows = $("#" + gridHelper.gridId).datagrid('options').pageSize;
     var queryJson = GetQueryJson("doexport");
     var parames = $.parseJSON(queryJson);
     var form = $("<form>");
@@ -161,7 +179,7 @@ function appdentToForm(form, name, value)
 function doimport() {
     var form = $("<form>");
     form.attr("style", "display:none");
-    form.attr("enctype","multipart/form-data")
+    form.attr("enctype","multipart/form-data");
     form.attr("target", "");
     form.attr("method", "post");
     form.attr("action", gridHelper.controllerUrl);

@@ -191,6 +191,10 @@ namespace BLL
                         {
                             sb.Append("'%" + queryDic[key] + "%'");
                         }
+                        else if (queryArray[1] == " IN ")
+                        {
+                            sb.Append(queryDic[key]);
+                        }
                         else
                         {
                             sb.Append("'" + queryDic[key] + "'");

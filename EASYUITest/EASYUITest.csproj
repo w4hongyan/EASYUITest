@@ -121,6 +121,7 @@
     <Content Include="ashx\Sys\ModuleController.ashx" />
     <Content Include="ashx\Sys\PriviledgeController.ashx" />
     <Content Include="ashx\Sys\RoleController.ashx" />
+    <None Include="Properties\PublishProfiles\EASYUITest.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -801,7 +802,7 @@
     <Content Include="jquery-easyui\themes\metro\window.css" />
     <Content Include="jquery-easyui\themes\mobile.css" />
     <Content Include="OrderList.aspx" />
-    <Content Include="Sys\RoleSetPriviledge.aspx" />
+    <Content Include="Sys\RoleSetPriviledgeList.aspx" />
     <Content Include="Sys\RoleList.aspx" />
     <Content Include="Sys\PriviledgeList.aspx" />
     <Content Include="Sys\ModuleList.aspx" />
@@ -844,12 +845,12 @@
     <Compile Include="OrderList.aspx.designer.cs">
       <DependentUpon>OrderList.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Sys\RoleSetPriviledge.aspx.cs">
-      <DependentUpon>RoleSetPriviledge.aspx</DependentUpon>
+    <Compile Include="Sys\RoleSetPriviledgeList.aspx.cs">
+      <DependentUpon>RoleSetPriviledgeList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Sys\RoleSetPriviledge.aspx.designer.cs">
-      <DependentUpon>RoleSetPriviledge.aspx</DependentUpon>
+    <Compile Include="Sys\RoleSetPriviledgeList.aspx.designer.cs">
+      <DependentUpon>RoleSetPriviledgeList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Sys\RoleList.aspx.cs">
       <DependentUpon>RoleList.aspx</DependentUpon>
