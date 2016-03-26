@@ -1,3 +1,2 @@
-EASYUITest/Web.config
-*.dll
-*.pdb
+obj/*
+bin/*
