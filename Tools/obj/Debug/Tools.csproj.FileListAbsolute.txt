@@ -18,3 +18,4 @@ F:\IIS\IIS\code\EASYUITest\Tools\obj\Debug\Tools.pdb
 F:\IIS\IIS\code\EASYUITest\Tools\bin\Debug\StackExchange.Redis.dll
 F:\IIS\IIS\code\EASYUITest\Tools\bin\Debug\StackExchange.Redis.pdb
 F:\IIS\IIS\code\EASYUITest\Tools\bin\Debug\StackExchange.Redis.xml
+F:\IIS\IIS\code\EASYUITest\Tools\obj\Debug\Tools.csprojResolveAssemblyReference.cache

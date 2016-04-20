@@ -29,7 +29,9 @@ namespace EASYUITest.ashx.Sys
         {
             if (e.action == "getHasPriviledge")
             {
-                e.context.Response.Write("123");
+                int roleId =Convert.ToInt32(e.context.Request["roleId"]);
+                string previledgeList = RolePreviledgeBLL.GetRolePreviledgeListByRoleId(roleId);
+                e.context.Response.Write(previledgeList);
             }
         }
 

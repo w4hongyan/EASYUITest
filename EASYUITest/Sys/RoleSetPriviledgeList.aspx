@@ -30,14 +30,20 @@
             gridHelper.singleSelect = false;
             gridHelper.pageSize = 500;
             gridHelper.title = "权限列表";
+            gridHelper.onClickRow = function() {};
             gridHelper.isInit = false;
             gridHelper.initGrid();
         });
 
-        function onRoleClick() {
-            alert("haha");
-            com.get("/ashx/Sys/PriviledgeController.ashx?action=getHasPriviledge", function(msg) {
-                alert(msg);
+        function onRoleClick(index,data) {
+            com.get("/ashx/Sys/PriviledgeController.ashx?action=getHasPriviledge&roleId=" + data.Id, function (msg) {
+                var roleArray = msg.split(',');
+                $("#tt1").datagrid('clearSelections');
+                for (var i = 0; i < roleArray.length; i++) {
+                    $("#tt1").datagrid('selectRow', roleArray[i]);
+                }
+                //$('#tt1').datagrid('selectRow', 1);
+                //$('#tt1').datagrid('selectRow', 2);
             });
         }
 
@@ -45,6 +51,7 @@
 </head>
 <body>
     <table>
+        <tr><td><a href="#" class="easyui-linkbutton" iconcls="fa fa-search" onclick="dosearch()">搜索</a></td></tr>
         <tr>
             <td >
                 <table id="tt" style="width: 100%;">
